@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title></title>
+  </head>
+  <body>
+    <section class="section">
+      <form action="" class="form">
+        <h1 class="title">Шифры от Никитоса</h1>
+
+        <div class="ciphers-select">
+            <div>
+                <input class="input--radio" type="radio" name="cipher" id="ceaser-cipher">
+                <label class="label label--radio" for="ceaser-cipher">Шифр Цезаря</label>
+            </div>
+            <div>
+                <input class="input--radio" type="radio" name="cipher" id="1-cipher">
+                <label class="label label--radio" for="1-cipher">Шифр 1</label>
+            </div>
+            <div>
+                <input class="input--radio" type="radio" name="cipher" id="2-cipher">
+                <label class="label label--radio" for="2-cipher">Шифр 2</label>
+            </div>
+        </div>
+
+        <label class="label" for="general">Текст:</label>
+        <input id="general" class="input" type="text" />
+
+        <label class="label" for="cipher-key">Ключ:</label>
+        <input id="cipher-key" class="input input-cipher-key" type="text" />
+
+        <div class="result">
+            <label class="label" for="encrypted">Зашифрованный текст:</label>
+            <input id="encrypted" class="input" type="text" readonly />
+        </div>
+      </form>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

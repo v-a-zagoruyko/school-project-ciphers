@@ -1,0 +1,76 @@
+.section {
+  width: 100%; /* Ширина */
+  height: 100vh; /* Высота (целый экран) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#ea8d8d, #a890fe);
+}
+
+.form {
+  width: 600px; /* Ширина */
+  padding: 48px; /* Внутренний отступ */
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 4px; /* Закругление углов */
+}
+
+.ciphers-select {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 18px;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    margin-top: 48px;
+}
+
+.input {
+  margin-bottom: 16px; /* Отступ снизу */
+  padding: 10px 0; /* Внутренний отступ */
+  font-family: sans-serif;
+  font-size: 24px;
+  font-weight: 200;
+  outline: 0; /* Граница/рамка при фокусе */
+  border: 0;
+  border-bottom: 1px solid #d9dddc; /* Граница/рамка */
+}
+
+.input:last-child {
+  margin-bottom: 0;
+}
+
+.input--radio {
+    position: fixed;
+    opacity: 0;
+}
+
+.input--radio:checked+label {
+    color: #FFFFFF;
+    background-color: #a890fe;
+}
+
+.input--radio+label {
+    padding: 12px;
+    background-color: #d9dddc;
+    border-radius: 6px;
+}
+
+.title {
+  margin-bottom: 48px;
+  font-size: 32px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.label {
+  margin-top: 32px;
+  margin-bottom: 6px;
+  color: #303030;
+  font-size: 20px;
+  font-weight: 400;
+}
