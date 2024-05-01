@@ -76,6 +76,14 @@ body {
   font-weight: 300; /* Жирность шрифта */
 }
 
+.form__caption {
+  margin-top: 8px; /* Отступ снизу */
+  color: var(--var-base-text); /* Цвет текста */
+  font-size: 13px; /* Размер шрифта */
+  font-weight: 400; /* Толшина шрифта */
+  text-align: center;
+}
+
 .form-title--bright {
   color: var(--var-base-text); /* Цвет текста */
 }
