@@ -1,76 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --var-background: #18181b;
+  --var-form-background: rgba(255, 255, 255, 0.015);
+  --var-base-border: rgba(255, 255, 255, 0.1);
+  --var-base-text: #a1a1aa;
+  --var-white-text: #faf9f6;
+  --var-black-text: #0e1111;
+  --var-white: #faf9f6;
+  --var-black: #0e1111;
+
+  --var-radio-block-background: hsl(215, 51%, 70%);
+  --var-radio-block-active-background: hsl(178, 100%, 50%);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after,
+input {
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--var-background);
+}
+
 .section {
   width: 100%; /* Ширина */
-  height: 100vh; /* Высота (целый экран) */
+  min-height: 100vh; /* Высота (целый экран) */
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(#ea8d8d, #a890fe);
+
+  @media (max-width: 768px) {
+    padding: 18px;
+  }
 }
 
 .form {
-  width: 600px; /* Ширина */
-  padding: 48px; /* Внутренний отступ */
+  padding: 30px; /* Внутренний отступ */
+  max-width: 500px;
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: var(--var-form-background); /* Цвет фона */
+  border: 1px solid var(--var-base-border); /* Ширина, вид и цвет рамки */
+  border-radius: 15px; /* Закругление углов */
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.form__title {
+  margin-bottom: 12px; /* Отступ снизу */
+  color: var(--var-white-text); /* Цвет текста */
+  font-size: 28px; /* Размер шрифта */
+  line-height: 1.25; /* Межстрочное расстояние */
+  font-weight: 500; /* Жирность шрифта */
+}
+
+.form__text {
+  margin-bottom: 24px; /* Отступ снизу */
+  color: var(--var-base-text); /* Цвет текста */
+  font-size: 16px; /* Размер шрифта */
+  line-height: 1.5; /* Межстрочное расстояние */
+  font-weight: 300; /* Жирность шрифта */
+}
+
+.form-title--bright {
+  color: var(--var-base-text); /* Цвет текста */
+}
+
+.form-group-container {
+  margin-top: 24px; /* Отступ сверху */
+}
+
+.form-group {
+  margin-bottom: 16px; /* Отступ снизу */
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group--input {
+  padding: 8px 12px; /* Внутренний отступ */
+  color: var(--var-white-text); /* Цвет текста */
+  font-size: 16px; /* Размер шрифта */
+  font-weight: 200; /* Толшина шрифта */
+  outline: 0; /* Убираем рамку при фокусе */
+  background-color: transparent; /* Прозрачный цвет фона */
+  border: 0; /* Убираем рамку */
+  border: 1px solid var(--var-base-border); /* Ширина, вид и цвет рамки */
   border-radius: 4px; /* Закругление углов */
 }
 
-.ciphers-select {
-    margin-bottom: 24px;
-    display: flex;
-    justify-content: flex-start;
-    column-gap: 18px;
+.form-group--textarea {
+  padding: 8px 12px; /* Внутренний отступ */
+  color: var(--var-white-text); /* Цвет текста */
+  font-size: 16px; /* Размер шрифта */
+  font-weight: 200; /* Толшина шрифта */
+  outline: 0; /* Убираем рамку при фокусе */
+  background-color: transparent; /* Прозрачный цвет фона */
+  border: 0; /* Убираем рамку */
+  border: 1px solid var(--var-base-border); /* Ширина, вид и цвет рамки */
+  border-radius: 4px; /* Закругление углов */
+  resize: vertical; /* Изменение размеров только по вертикали */
 }
 
-.result {
-    display: flex;
-    flex-direction: column;
-    margin-top: 48px;
+.form-group--label {
+  margin-bottom: 8px; /* Отступ снизу */
+  color: var(--var-base-text); /* Цвет текста */
+  font-size: 16px; /* Размер шрифта */
+  font-weight: 300; /* Толшина шрифта */
 }
 
-.input {
-  margin-bottom: 16px; /* Отступ снизу */
-  padding: 10px 0; /* Внутренний отступ */
-  font-family: sans-serif;
-  font-size: 24px;
-  font-weight: 200;
-  outline: 0; /* Граница/рамка при фокусе */
-  border: 0;
-  border-bottom: 1px solid #d9dddc; /* Граница/рамка */
+.form-group--caption {
+  margin-top: 4px; /* Отступ снизу */
+  color: var(--var-base-text); /* Цвет текста */
+  font-size: 13px; /* Размер шрифта */
+  font-weight: 300; /* Толшина шрифта */
 }
 
-.input:last-child {
-  margin-bottom: 0;
+.radio-container {
+  margin-bottom: 8px; /* Отступ снизу */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 12px; /* Отступ между элементами внутри контейнера */
 }
 
-.input--radio {
-    position: fixed;
-    opacity: 0;
+.radio-group--label {
+  font-size: 16px; /* Размер шрифта */
+  font-weight: 400; /* Толшина шрифта */
+  line-height: 2.3;
 }
 
-.input--radio:checked+label {
-    color: #FFFFFF;
-    background-color: #a890fe;
+.radio-group--input {
+  position: fixed;
+  opacity: 0; /* Прозрачность */
 }
 
-.input--radio+label {
-    padding: 12px;
-    background-color: #d9dddc;
-    border-radius: 6px;
+.radio-group--input + label {
+  padding: 8px 12px; /* Внутренний отступ */
+  color: var(--var-white-text); /* Цвет текста */
+  border: 1px solid var(--var-base-border); /* Ширина, вид и цвет рамки */
+  border-radius: 100px; /* Закругление рамки */
+  cursor: pointer; /* Вид курсора */
+  transition: color 0.1s ease-in-out, background-color 0.2s ease-in-out; /* Анимация изменения цвета текста и фона */
 }
 
-.title {
-  margin-bottom: 48px;
-  font-size: 32px;
-  text-align: center;
-  font-weight: 600;
-}
-
-.label {
-  margin-top: 32px;
-  margin-bottom: 6px;
-  color: #303030;
-  font-size: 20px;
-  font-weight: 400;
+.radio-group--input:checked + label {
+  color: var(--var-black-text); /* Цвет текст */
+  background-color: var(--var-white); /* Цвет фона */
 }
